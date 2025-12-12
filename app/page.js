@@ -1,5 +1,5 @@
 'use client'
-import { useState } from "react";
+import { useState, useRef } from "react";
 import Image from "next/image";
 import styles from "./page.module.css";
 
@@ -23,6 +23,9 @@ export default function Home() {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
+      submitBtn.current.setAttribute("disabled", "true");
+      submitBtn.current.classList.add("loading");
+
       const myForm = event.target;
       const formData = new FormData(myForm);
       const res = await fetch('/__forms.html', {
@@ -59,10 +62,16 @@ export default function Home() {
             }}
             navigation={true}
             loop={true}
-            slidesPerView={3}
-            spaceBetween={30}
+            slidesPerView={1}
+            spaceBetween={10}
             modules={[Pagination, Navigation]}
             className="mySwiper"
+            breakpoints={{
+              425: {
+                slidesPerView: 3,
+                spaceBetween: 30
+              }
+            }}
           >
             <SwiperSlide><Image src={"/img/art/20211103_111722.jpg"} alt="David's work" width="1836" height="3264" /></SwiperSlide>
             <SwiperSlide><Image src={"/img/art/20211110_072525.jpg"} alt="David's work" width="1836" height="3264" /></SwiperSlide>
@@ -116,7 +125,7 @@ export default function Home() {
                 <input type='email' id="email" name="email" placeholder="Email" />
               </fieldset>
               <textarea name="message" id="message" placeholder="Your Message"></textarea>
-              <button type="submit">Submit</button>
+              <button type="submit" ref={submitBtn}>Submit</button>
             </form>
           )}
         </div>
@@ -129,7 +138,7 @@ export default function Home() {
         </footer>
 
 
-      </main>
-    </div>
+      </main >
+    </div >
   );
 }

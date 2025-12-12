@@ -47,6 +47,8 @@
 
   img {
     margin: 2rem 0;
+    max-width: 100%;
+    height: auto;
   }
 
   p {
@@ -84,5 +86,22 @@
 
   hr {
     margin: 2rem 0;
+  }
+}
+
+@media (max-width:768px) {
+  .main {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .title {
+    h1 {
+      font-size: 3rem;
+
+      span {
+        font-size: 1.5rem;
+      }
+    }
   }
 }
