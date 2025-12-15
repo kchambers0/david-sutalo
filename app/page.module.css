@@ -78,6 +78,23 @@
   text-align: center;
   margin: 2rem 0;
   width: 100%;
+
+  [class~=message-sent] {
+
+    h2,
+    h3,
+    a {
+      font-family: lexend;
+    }
+
+    h3 {
+      margin: .5rem 0;
+    }
+
+    button {
+      padding: .5 1.5rem;
+    }
+  }
 }
 
 .footer {

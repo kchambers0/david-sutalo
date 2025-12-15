@@ -31,12 +31,13 @@ export default function Home() {
       const res = await fetch('/__forms.html', {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: formData
+        body: new URLSearchParams(formData).toString()
       });
       if (res.status === 200) {
         setIsSent(true)
       } else {
         setError(`${res.status} ${res.statusText}`);
+        setIsSent(true)
       }
     } catch (e) {
       setError(`${e}`);
@@ -107,7 +108,7 @@ export default function Home() {
               <div className="message-sent">
                 <h2>Something went wrong!</h2>
                 <h3>An error has occured. Please reload the page and try again.</h3>
-                <a href="#" className="btn btn-pink" onClick={(e) => { e.preventDefault(); location.reload(); }}>Reload</a>
+                <button href="#" className="btn" onClick={(e) => { e.preventDefault(); location.reload(); }}>Reload</button>
               </div>
 
             ) : (
