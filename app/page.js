@@ -31,7 +31,7 @@ export default function Home() {
       const res = await fetch('/__forms.html', {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: new URLSearchParams(formData).toString()
+        body: formData
       });
       if (res.status === 200) {
         setIsSent(true)
