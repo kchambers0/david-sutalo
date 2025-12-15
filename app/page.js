@@ -126,6 +126,7 @@ export default function Home() {
                 <input type='email' id="email" name="email" placeholder="Email" />
               </fieldset>
               <textarea name="message" id="message" placeholder="Your Message"></textarea>
+              <input type="hidden" name="form-name" value="contact" />
               <button type="submit" ref={submitBtn}>Submit</button>
             </form>
           )}
