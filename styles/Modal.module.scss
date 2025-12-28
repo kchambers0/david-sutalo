@@ -1,0 +1,114 @@
+/* The Modal (background) */
+.header {
+  font-size: 1.25rem;
+  color: #eaca0c;
+  margin-bottom: 1.5rem;
+}
+
+.modal {
+  position: fixed;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.5);
+  transition: opacity .4s;
+
+
+  h2,
+  h3 {
+    font-family: lexend;
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
+
+  h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+}
+
+.modalContent {
+  width: 650px;
+  min-height: 650px;
+  max-height: 100vh;
+  overflow: auto;
+  background-color: #000;
+  margin: 0 auto;
+  padding: 2.8rem 3.1rem;
+  border: 1px solid #888;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border-radius: 7px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.close {
+  color: #aaa;
+  font-size: 2rem;
+  position: absolute;
+  top: 0px;
+  right: 14px;
+  font-family: lexend;
+}
+
+.close:hover,
+.close:focus {
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 768px) {
+  .container {
+    padding: 0 2rem;
+    margin: 1rem auto;
+  }
+
+  .info {
+    padding-top: 3rem;
+  }
+
+  .header {
+    line-height: 1.2;
+    width: calc(100% - 10px);
+    margin-bottom: 1rem;
+  }
+
+  .modalContent {
+    width: 98vw;
+    min-height: auto;
+    padding: 2.5rem 1.5rem;
+    justify-content: start;
+    top: 0%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .close {
+    right: 1.5rem;
+    top: 0rem;
+  }
+
+  .reportForm {
+    fieldset {
+      display: block;
+
+      input,
+      select {
+        width: 100%;
+        height: 45px;
+        margin-bottom: 10px;
+      }
+    }
+  }
+}

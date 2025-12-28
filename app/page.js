@@ -1,7 +1,8 @@
 'use client'
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import Image from "next/image";
 import styles from "./page.module.css";
+import Modal from "@/components/Modal";
 
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -43,6 +44,14 @@ export default function Home() {
       setError(`${e}`);
     }
   };
+
+  const [isModalVisible, setIsModalVisible] = useState(false);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setIsModalVisible(true);
+    }, 2000)
+  }, [])
 
   return (
     <div className={styles.page}>
@@ -140,6 +149,14 @@ export default function Home() {
         </footer>
 
 
+        <Modal isModalVisible={isModalVisible} setIsModalVisible={setIsModalVisible} modalTitle={"Saturday, January 17, 2026"}>
+          <h3>a 3-Part Day in Memory of David Sutalo</h3>
+          <p><strong>Part 1 | 1:00pm to 4:30pm</strong>: Open House Memorial & Wake at the Goodwin Library at Pike Place Market. There will be an area set up with David's ashes for those who wish to sit, visit or talk with David. David's art will also be set up as a gallery viewing, and there will be light refreshments.</p>
+
+          <p><strong>Part 2 | 5:00pm to Later</strong>: Celebration of Life at White Horse Tavern. This is a gathering to celebrate David's life and say cheers to knowing and loving him. There will be pizza and other treats.</p>
+
+          <p><strong>Part 3 | TBD</strong>: After Party at Jon C.'s Pad. Drinks, music, good conversation, Dito... a good time in David's honor. </p>
+        </Modal>
       </main >
     </div >
   );
