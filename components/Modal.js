@@ -12,7 +12,7 @@ function Modal({ isModalVisible, setIsModalVisible, modalTitle, children }) {
   }
 
   return (
-    <div ref={modal} className={styles.modal} style={{ opacity: isModalVisible ? '1' : '0' }} data-close="true" onClick={hide}>
+    <div ref={modal} className={styles.modal} style={{ opacity: isModalVisible ? '1' : '0', pointerEvents: isModalVisible ? "auto" : "none" }} data-close="true" onClick={hide}>
       <div className={styles.modalContent}>
 
         <h2 className={styles.header}>{modalTitle ? modalTitle : "Default Modal Title"}</h2>
