@@ -149,7 +149,7 @@ export default function Home() {
         </footer>
 
 
-        <Modal isModalVisible={isModalVisible} setIsModalVisible={setIsModalVisible} modalTitle={"Saturday, January 17, 2026"}>
+        {/* <Modal isModalVisible={isModalVisible} setIsModalVisible={setIsModalVisible} modalTitle={"Saturday, January 17, 2026"}>
           <h3>a 3-Part Day in Memory of David Sutalo</h3>
           <p><strong>Part 1 | 1:00pm to 4:30pm</strong>: Open House Memorial & Wake at the Goodwin Library at Pike Place Market. There will be an area set up with David's ashes for those who wish to sit, visit or talk with David. David's art will also be set up as a gallery viewing, and there will be light refreshments.</p>
           <p><a href="https://partiful.com/e/HT3OtpWI63TrGuzS88Qc?c=b2TWQxUv" target="_blank" rel="noopener">RSVP</a></p>
@@ -159,7 +159,7 @@ export default function Home() {
 
           <p><strong>Part 3 | TBD</strong>: After Party at Jon C.'s Pad. Drinks, music, good conversation, Dito... a good time in David's honor. </p>
           <p><a href="https://partiful.com/e/HT3OtpWI63TrGuzS88Qc?c=b2TWQxUv" target="_blank" rel="noopener">RSVP</a></p>
-        </Modal>
+        </Modal> */}
       </main >
     </div >
   );
